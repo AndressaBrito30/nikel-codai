@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<!-- saved from url=(0038)http://127.0.0.1:5500/public/home.html -->
+<html lang="pt" data-lt-installed="true"><style lang="en" type="text/css" id="night-mode-pro-style"></style><link type="text/css" rel="stylesheet" id="night-mode-pro-link"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NIKEL-HOME</title>
+    <link href="./NIKEL-HOME_files/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="./NIKEL-HOME_files/bootstrap-icons.css">
+    <link rel="stylesheet" href="./NIKEL-HOME_files/styles.css">  
+    </head>
+   <body id="app" data-new-gr-c-s-check-loaded="14.1055.0" data-gr-ext-installed="">
+       <header>
+        <nav class="navbar navbar-expand navbar-light bg-white">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="http://127.0.0.1:5500/public/home.html#"></a>
+              <img src="./NIKEL-HOME_files/nikel-small-logo.png" alt="nikel-small-logo img-fluid">
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+                <div class="d-flex menu">
+                <a href="http://127.0.0.1:5500/public/home.html"> <button class="btn" type="button"><i class="bi bi-house-door-fill color-secundary fs-4"></i></button></a>
+                <a href="http://127.0.0.1:5500/public/transactions.html"> <button class="btn" type="button"><i class="bi bi-currency-exchange fs-4"></i></button></a>
+                 <div class="dropdown">
+                 <button class="btn" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                     <i class="bi bi-person-circle fs-4"></i>
+                </button>
+
+             <ul class="dropdown-menu logout" aria-labelledby="dropdownMenuButton1">
+                 <li><button class="dropdown-item" id="button-logout">Sair</button></li>
+             </ul>
+            </div>
+             </div>
+              </div>
+            </div>
+          </nav>
+       </header>
+            <main>
+                <div class="container-lg">
+                    <div class="row">
+                        <div class="col d-flex justify-content-start align-items-center mt-4">
+                                <i class="bi bi-cash-coin color-primary icon-detail"></i>
+                                <span class="fs-2" id="saldo-total">R$ 52250,00</span>
+                        </div>
+                        <div class="col d-flex justify-content-end mt-4">
+                            <div class="text-center">
+                                <img src="./NIKEL-HOME_files/coins-small.png" alt="image-coins">
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 shadow-lg info">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-6">
+                                    <span class="fs-4"> Entradas <i class="bi bi-arrow-down-circle icon-detail fs-2 align-middle"></i></span>
+                                    </div>
+                                    <div class="col-6">
+                                    <span class="fs-4">Saídas <i class="bi bi-arrow-up-circle icon-detail fs-2 align-middle"></i></span>
+                                    </div>
+                                    <div class="col-12 my-2">
+                                        <hr>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <div class="container p-0 " id="cash-in-list"> </div>   
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="container p-0 " id="cash-out-list">
+                                            <div class="row mb-4">
+                                                <div class="col-12">
+                                               <h3 class="fs-2">7000</h3>
+                                               <div class="container p-0 ">
+                                                <div class="row">
+                                                    <div class="col-12 col-md-8">
+                                                     <p>   Descrição</p>
+                                                    </div>
+                                                    <div class="col-12 col-md-3 justify-content-end">
+                                                        04/04/2022
+                                                    </div>
+                                                </div>
+                                            </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <button type="button" class="btn button-default">Ver Todas</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="btn button-float" data-bs-toggle="modal" data-bs-target="#transaction-modal">
+                        <i class="bi bi-plus"></i></button>
+                </div>
+                <!-- Modal -->
+  <div class="modal fade" id="transaction-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Adicionar Lançamentos</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+
+        <form id="transaction-form">
+        <div class="modal-body">
+                <div class="mb-3">
+                    <label for="value-input" class="form-label">Valor</label>
+                    <input type="number" class="form-control" id="value-input" aria-describedby="emailHelp" required="">
+                </div>
+                 <div class="mb-3">
+                    <label for="description-input" class="form-label">Descrição</label>
+                    <input type="text" class="form-control" id="description-input" required="">
+                 </div>
+                    <div class="mb-3">
+                    <label for="date-input" class="form-label">Data</label>
+                    <input type="date" class="form-control" id="date-input" aria-describedby="emailHelp" required="">
+                    <div id="emailHelp" class="form-text">Utilize seu e-mail para criar a conta.</div>
+                    </div>
+                    <div class="mb-3">
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="type-input" value="1" checked="">
+                            <label class="form-check-label" for="inlineRadio1">Entradas</label>
+                          </div>
+                          <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="type-input" value="2">
+                            <label class="form-check-label" for="inlineRadio2">Saidas</label>
+                          </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn button-cancel" data-bs-dismiss="modal">Cancelar</button>
+                        <button type="submit" class="btn button-default">Adicionar</button>
+                      </div>
+         
+        </div></form>
+      </div>
+    </div>
+  </div>
+            </main>
+   <script src="./NIKEL-HOME_files/bootstrap.bundle.min.js.download" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script src="./NIKEL-HOME_files/home.js.download"></script>
+        <!-- Code injected by live-server -->
+<script type="text/javascript">
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+        
+
+
+
+                                
+                                    
+      </body><grammarly-desktop-integration data-grammarly-shadow-root="true"></grammarly-desktop-integration></html>
