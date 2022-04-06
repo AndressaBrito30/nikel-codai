@@ -13,24 +13,27 @@ document.getElementById("transactions-button").addEventListener("click", functio
 
 //ADICIONAR LANÇAMENTO
 
-document.getElementById("transaction-form").addEventListener("submit", function (e) {
+document.getElementById("transaction-form").addEventListener("submit",function (e){
     e.preventDefault();
 
     const value = parseFloat(document.getElementById("value-input").value);
     const description = document.getElementById("description-input").value;
     const date = document.getElementById("date-input").value;
     const type = document.querySelector('input[name="inlineRadioOptions"]:checked').value;
-
+    
     //Verificando o saldo quando houver transação de saida.
-    if (type == "2") {
+    if(type == "2"){
         const sal = saldo(data.transactions);
-        if (sal < value) {
+      
+        if(sal < value){
             myModal.hide();
-            alert("Atenção Saldo Negativo. :( ");
-            return "";
+         alert("Atenção Saldo Negativo. :( ");
+        salvarTransaction(value, type, description, date, e);
         }
+
+    } else {
+        salvarTransaction(value, type, description, date, e);
     }
-    salvarTransaction(value, type, description, date, e);
     atualizarSaldo();
 });
 
