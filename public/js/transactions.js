@@ -22,12 +22,15 @@ document.getElementById("transaction-form").addEventListener("submit",function (
         const sal = saldo(data.transactions);
         console.log(sal);
         if(sal < value){
+
             myModal.hide();
-            alert("Atenção Saldo Negativo. :( ");
-            return "";
+              alert("Atenção Saldo Negativo. :( ");
+              salvarTransaction(value, type, description, date, e);
+
         }
+    } else {
+        salvarTransaction(value, type, description, date, e);
     }
-    salvarTransaction(value, type, description, date, e);
     atualizarSaldo();
 });
 
